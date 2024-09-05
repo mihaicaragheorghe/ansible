@@ -1,0 +1,17 @@
+- name: Install essential system packages 1
+  become: true
+  apt:
+    name: [ "build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev", "unzip", "libtool", "libtool-bin", "gettext" ]
+  tags:
+    - install
+    - neovim
+    - core
+
+- name: Install essential system packages 2
+  become: true
+  apt:
+    name: [ "curl", "htop", "lsof", "ccache", "ninja-build", "python3-pip", "moreutils", "clangd"]
+  tags:
+    - install
+    - core
+
